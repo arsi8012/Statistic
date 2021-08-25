@@ -43,7 +43,8 @@ public class StatsService {
 
     public long numberMonthOverAverage(long[] sales) {
         int numberMonth = 0;
-        int calcAverage = 15;
+        long sum = calcSum(sales);
+        long calcAverage = sum / sales.length;
         for (long sale : sales) {
             if (sale <= calcAverage) {
                 numberMonth = numberMonth + 1;
@@ -54,7 +55,8 @@ public class StatsService {
 
     public long numberMonthUnderAverage(long[] sales) {
         int numberMonth = 0;
-        int calcAverage = 15;
+        long sum = calcSum(sales);
+        long calcAverage = sum / sales.length;
         for (long sale : sales) {
             if (sale > calcAverage) {
                 numberMonth = numberMonth + 1;
